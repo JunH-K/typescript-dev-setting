@@ -4,13 +4,29 @@
   "description": "",
   "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "build": "webpack --mode=production",
     "dev": "webpack-dev-server --open  --progress --mode=development"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.ts$": "ts-jest"
+    },
+    "testRegex": "\\.test\\.ts$",
+    "moduleFileExtensions": [
+      "ts",
+      "js"
+    ],
+    "globals": {
+      "ts-jest": {
+        "enableTsDiagnostics": true
+      }
+    }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^24.9.0",
     "typescript": "^3.7.4",
     "typings-for-css-modules-loader": "^1.7.0"
   },
